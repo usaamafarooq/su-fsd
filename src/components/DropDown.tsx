@@ -1,7 +1,11 @@
 "use client";
 import React from "react";
 
-function DropDown({ handleDropDownChange }) {
+interface DropDownProps {
+  handleDropDownChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+function DropDown({ handleDropDownChange }: DropDownProps) {
   return (
     <select
       onChange={handleDropDownChange}

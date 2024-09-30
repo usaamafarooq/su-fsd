@@ -1,7 +1,7 @@
 export const customSort = (a: string, b: string) => {
   const regex = /(\d+)|(\D+)/g;
-  const aParts = a.match(regex);
-  const bParts = b.match(regex);
+  const aParts = a.match(regex) || []; // Ensure aParts is an array
+  const bParts = b.match(regex) || []; // Ensure bParts is an array
 
   for (let i = 0; i < Math.max(aParts.length, bParts.length); i++) {
     const aPart = aParts[i] || "";

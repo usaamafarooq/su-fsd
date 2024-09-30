@@ -3,12 +3,12 @@ import { promises as fs } from "fs";
 
 import csvToJson from "convert-csv-to-json";
 
-export async function GET(req: Request) {
+export async function GET() {
   try {
     const file = await fs.readFile(process.cwd() + "/src/app/data.csv", "utf8");
     console.log("data file", file);
-    let result = [];
-    let json = csvToJson.getJsonFromCsv(process.cwd() + "/src/app/data.csv");
+    const result = [];
+    const json = csvToJson.getJsonFromCsv(process.cwd() + "/src/app/data.csv");
     for (let i = 0; i < json.length; i++) {
       console.log(json[i]);
       result.push({
